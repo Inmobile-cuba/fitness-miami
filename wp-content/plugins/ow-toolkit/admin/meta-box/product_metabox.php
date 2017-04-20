@@ -1,0 +1,3 @@
+<?php
+/** * Define the metabox and field configurations. * * @param  array $meta_boxes * @return array */function product_metabox( array $meta_boxes ) {	
+	$manage_blocks = array(		array( 'id' => 'page_banner_option', 'name' => 'Page Banner', 'type' => 'image', 'cols' => 2 ),	);	$meta_boxes[] = array(		'title' => 'Page Options',		'pages' => 'product',		'fields' => $manage_blocks	);	return $meta_boxes;}add_filter( 'cmb_meta_boxes', 'product_metabox' );
